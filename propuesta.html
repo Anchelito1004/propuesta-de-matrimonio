@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Quieres casarte conmigo?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #ffe6f0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    h1 {
+      color: #ff007f;
+      margin-bottom: 50px;
+    }
+
+    .buttons {
+      position: relative;
+      height: 100px;
+      width: 300px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s;
+      position: absolute;
+    }
+
+    #yes {
+      background-color: #ff69b4;
+      color: white;
+      left: 20px;
+      top: 20px;
+    }
+
+    #no {
+      background-color: #ccc;
+      color: black;
+      left: 150px;
+      top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>¿Quieres casarte conmigo? 💍</h1>
+  <div class="buttons">
+    <button id="yes" onclick="alert('¡Te amo azul! 💖')">Sí</button>
+    <button id="no">No</button>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById('no');
+
+    noBtn.addEventListener('mouseenter', () => {
+      const maxX = window.innerWidth - noBtn.offsetWidth;
+      const maxY = window.innerHeight - noBtn.offsetHeight;
+
+      // Genera posiciones aleatorias dentro de la ventana
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
+
+      noBtn.style.left = x + 'px';
+      noBtn.style.top = y + 'px';
+    });
+  </script>
+</body>
+</html>
